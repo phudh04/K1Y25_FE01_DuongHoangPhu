@@ -1,0 +1,212 @@
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Hình ảnh tự động xuống dòng */
+  gap: 10px; /* Khoảng cách giữa các hình ảnh */
+  justify-content: center; /* Căn giữa các hình ảnh */
+}
+
+.image-container {
+  width: calc((100% - 30px) / 4); /* Chia đều không gian cho 4 hình ảnh mỗi hàng */
+  aspect-ratio: 1; /* Đảm bảo hình vuông */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Hiệu ứng chuyển động mượt */
+}
+
+.image-container:hover .image {
+  transform: scale(1.3); /* Hiệu ứng phóng to khi hover */
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Khoảng cách giữa các card */
+  margin-top: 20px;
+}
+
+/* Card sản phẩm */
+.product-card {
+  display: flex;
+  flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+  justify-content: space-between; /* Giãn đều nội dung */
+  align-items: center; /* Căn giữa nội dung */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 300px; /* Chiều cao cố định để hình ảnh chiếm 70% */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Container hình ảnh */
+.image-products {
+  width: 100%;
+  height: 70%; /* Hình ảnh chiếm 70% chiều cao card */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hình ảnh sản phẩm */
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh bao phủ toàn bộ container */
+}
+
+/* Tên sản phẩm */
+.product-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Nút "Thêm vào giỏ hàng" */
+.add-to-cart-btn {
+  background-color: #f00b0b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #333;
+}
+
+/* Thanh điều hướng */
+.navbar {
+  background-color: #363636; /* Màu nền thanh điều hướng */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Căn giữa các mục menu */
+  align-items: center;
+}
+
+/* Danh sách menu */
+.menu {
+  list-style: none;
+  display: flex; /* Hiển thị danh sách ngang */
+  gap: 20px; /* Khoảng cách giữa các mục menu */
+  margin: 0;
+  padding: 0;
+}
+
+/* Mục menu */
+.menu-item a {
+  text-decoration: none; /* Xóa gạch chân mặc định */
+  color: white; /* Màu chữ */
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt */
+}
+
+/* Hiệu ứng hover */
+.menu-item a:hover {
+  background-color: #f00b0b; /* Màu nền khi hover */
+  color: #fff; /* Màu chữ khi hover */
+  text-decoration: underline; /* Thêm gạch chân khi hover */
+}
+
+/* Container chính cho danh sách bình luận */
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Khoảng cách giữa các bình luận */
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto; /* Căn giữa danh sách bình luận */
+}
+
+/* Mỗi bình luận */
+.comment {
+  display: flex;
+  flex-direction: row; /* Hiển thị các thành phần theo hàng ngang */
+  align-items: center; /* Căn giữa theo trục dọc */
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ảnh đại diện */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Bo tròn hình ảnh */
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+/* Nội dung bình luận */
+.comment-content {
+  flex: 1; /* Chiếm toàn bộ không gian còn lại */
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Nút Trả lời */
+.reply-btn {
+  background-color: #f00b0b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reply-btn:hover {
+  background-color: #333;
+}
+
+/* Responsive: Xuống dòng trên màn hình nhỏ */
+@media (max-width: 480px) {
+  .comment {
+    flex-direction: column; /* Hiển thị theo cột trên màn hình nhỏ */
+    align-items: flex-start;
+  }
+
+  .reply-btn {
+    margin-top: 10px;
+  }
+}
+.title{
+  color: #333;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px;
+}
